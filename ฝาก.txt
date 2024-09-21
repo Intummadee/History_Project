@@ -1,0 +1,24 @@
+# Select burning trees
+        burning_trees = self.agents.select(self.agents.condition == 1)
+
+        # Spread fire
+        for tree in burning_trees:
+            for neighbor in self.forest.neighbors(tree):
+                # attribute position จะมีแค่ที่เรากำหนดลงให้ คือ goal กับ จุดเริ่มต้น
+                if neighbor.condition == 0:
+                    neighbor.condition = 1 # Neighbor starts burning
+            tree.condition = 2 # Tree burns out
+            print(f"------------------ Step: {self.t} ------ {(len(self.forest.neighbors(tree)))}")
+
+        # Stop simulation if no fire is left
+        if len(burning_trees) == 0:
+            self.stop()
+
+        
+        # TODO
+        # reachTarget = self.forest.agents_at((10, 25))  # ดึงเอเยนต์ที่ตำแหน่ง (10, 25)
+        # if reachTarget:
+        #     for agent in reachTarget:
+        #         if agent.condition == 1:
+        #             self.stop()      
+        #         agent.condition = 3  # ตั้งค่า condition สำหรับทุก agent ที่ตำแหน่งนี้
