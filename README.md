@@ -7,3 +7,4 @@ python -m venv venv
 pip install agentpy networkx matplotlib seaborn
 pip install ipython
 ```
+python -m pip install pathfinding
