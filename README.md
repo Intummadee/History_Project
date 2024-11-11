@@ -1,10 +1,5 @@
-# History_Project
+# Location-routing problem simulation for bicycle sharing
  
 python -m venv venv
 .\venv\Scripts\activate
 
-```
-pip install agentpy networkx matplotlib seaborn
-pip install ipython
-```
-python -m pip install pathfinding
